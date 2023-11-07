@@ -1,3 +1,4 @@
+// This script holds all cart data. to include new items in cart, add them here
 let cartItems = [
   {
     productId: Math.random(),

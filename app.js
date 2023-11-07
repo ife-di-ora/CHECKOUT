@@ -1,16 +1,15 @@
 // declare html link variables
-
 const cardContainer = document.querySelector("#card--container");
 const cartSummary = document.getElementById("cart--summary");
 
+// declare other global variables
 let sum;
 let currrencyDisplay = Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "NGN",
 });
 
-// create function to display card in the section
-
+// create function to display card of each item in the section
 function displayCartItems() {
   cardContainer.innerHTML = cartItems
     .map((item) => {
@@ -47,11 +46,9 @@ function displayCartItems() {
     })
     .join("");
 }
-
 displayCartItems();
 
-// function to increase qty
-
+// function to increase qty of cart item
 function increaseQty(id) {
   cartItems.forEach((item) => {
     if (item.productId == id) {
@@ -62,7 +59,7 @@ function increaseQty(id) {
   calculateTotal();
 }
 
-// function to decrease qty
+// function to decrease qty of cart item
 function decreaseQty(id) {
   cartItems.forEach((item) => {
     if (item.productId == id) {
@@ -75,7 +72,7 @@ function decreaseQty(id) {
   calculateTotal();
 }
 
-// function to remove item
+// function to remove item from cart
 function removeItem(id) {
   cartItems = cartItems.filter((item) => item.productId !== id);
 
@@ -83,6 +80,7 @@ function removeItem(id) {
   calculateTotal();
 }
 
+// function to calculate total of cart items
 function calculateTotal() {
   sum = cartItems.reduce(
     (sum, item) => (sum += item.productPrice * item.productQty),
@@ -94,7 +92,6 @@ function calculateTotal() {
 calculateTotal();
 
 // a function to check if a customer likes a product
-
 function updateLike(id) {
   cartItems.forEach((item) => {
     if (item.productId === id && item.like === "no") {
