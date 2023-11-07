@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <!-- create header to hold navbar -->
     <header class="sticky-top bg-body-tertiary">
       <nav class="navbar navbar-expand">
         <div class="container">
@@ -49,9 +50,12 @@
       </nav>
     </header>
 
+    <!-- create main container to hold cart content and summary div -->
     <main class="container-sm mt-3">
       <div class="text-center row gx-5 flex-column-reverse flex-lg-row">
+        <!-- cart content div -->
         <section id="card--container" class="col row g-3"></section>
+        <!-- summary section div -->
         <div class="col-sm-12 mt-4 col-lg-3">
           <div class="cart--summary card sticky-lg-top">
             <div class="card-header bg-warning-subtle">CART SUMMARY</div>
@@ -61,8 +65,11 @@
         </div>
       </div>
     </main>
+    <!-- include data script for cart items -->
     <script src="./data.js"></script>
+    <!-- include app script for functionality -->
     <script src="./app.js"></script>
+    <!-- include icons toolkit -->
     <script
       src="https://kit.fontawesome.com/7206eff000.js"
       crossorigin="anonymous"
